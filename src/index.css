@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border {
+  border: 2px;
+  border-color: gradient(#5e548e, #9f86c0);
+}
+
+.card {
+  width: 400px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+}
+
+.underline-title {
+  text-decoration: underline wavy #5e548e;
+}

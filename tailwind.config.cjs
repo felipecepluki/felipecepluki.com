@@ -11,7 +11,7 @@ module.exports = {
         purpleclear: "#e0b1cb",
       },
       fontFamily: {
-        jetbrains: "JetBrains Mono, monospace",
+        unbounded: "Unbounded, cursive",
       },
       screens: {
         sm: "375px",

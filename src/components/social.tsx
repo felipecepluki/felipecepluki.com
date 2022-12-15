@@ -6,28 +6,49 @@ import {
   LinkedinLogo,
   TiktokLogo,
   TwitterLogo,
+  Envelope,
 } from "phosphor-react";
 
 export default function Social() {
-  const [linkedin, SetLinkedin] = useState(false);
-  const [instagram, SetInstagram] = useState(false);
-  const [twitter, SetTwitter] = useState(false);
-  const [tiktok, SetTiktok] = useState(false);
-  const [github, SetGithub] = useState(false);
+  const [mail, setMail] = useState(false);
+  const [linkedin, setLinkedin] = useState(false);
+  const [instagram, setInstagram] = useState(false);
+  const [twitter, setTwitter] = useState(false);
+  const [tiktok, setTiktok] = useState(false);
+  const [github, setGithub] = useState(false);
 
   return (
     <footer className="w-full flex flex-row items-center justify-between">
+      <a
+        href="mailto:cepluki.felipe@protonmail.com"
+        target="_blank"
+        rel="noreferrer noopener"
+        className="mr-4 flex flex-row items-center transition-all"
+        onMouseEnter={() => setMail(true)}
+        onMouseLeave={() => setMail(false)}
+      >
+        <Envelope size={40} color="#fff" className="" />
+        {mail ? (
+          <strong className="text-white text-base font-unbounded">
+            E-mail
+          </strong>
+        ) : (
+          <></>
+        )}
+      </a>
       <a
         href="https://www.linkedin.com/in/felipe-cepluki-lopes-4b7a18243"
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => SetLinkedin(true)}
-        onMouseLeave={() => SetLinkedin(false)}
+        onMouseEnter={() => setLinkedin(true)}
+        onMouseLeave={() => setLinkedin(false)}
       >
-        <LinkedinLogo size={40} color="#9f86c0" className="" />
+        <LinkedinLogo size={40} color="#fff" className="" />
         {linkedin ? (
-          <strong className="text-[#9f86c0] text-base">Linkedin</strong>
+          <strong className="text-white text-base font-unbounded">
+            Linkedin
+          </strong>
         ) : (
           <></>
         )}
@@ -37,12 +58,14 @@ export default function Social() {
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => SetInstagram(true)}
-        onMouseLeave={() => SetInstagram(false)}
+        onMouseEnter={() => setInstagram(true)}
+        onMouseLeave={() => setInstagram(false)}
       >
-        <InstagramLogo size={40} color="#9f86c0" />
+        <InstagramLogo size={40} color="#fff" />
         {instagram ? (
-          <strong className="text-[#9f86c0] text-base">Instagram</strong>
+          <strong className="text-white text-base font-unbounded">
+            Instagram
+          </strong>
         ) : (
           <></>
         )}
@@ -52,12 +75,14 @@ export default function Social() {
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => SetTwitter(true)}
-        onMouseLeave={() => SetTwitter(false)}
+        onMouseEnter={() => setTwitter(true)}
+        onMouseLeave={() => setTwitter(false)}
       >
-        <TwitterLogo size={40} color="#9f86c0" />
+        <TwitterLogo size={40} color="#fff" />
         {twitter ? (
-          <strong className="text-[#9f86c0] text-base">Twitter</strong>
+          <strong className="text-white text-base font-unbounded">
+            Twitter
+          </strong>
         ) : (
           <></>
         )}
@@ -67,12 +92,14 @@ export default function Social() {
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => SetTiktok(true)}
-        onMouseLeave={() => SetTiktok(false)}
+        onMouseEnter={() => setTiktok(true)}
+        onMouseLeave={() => setTiktok(false)}
       >
-        <TiktokLogo size={40} color="#9f86c0" />
+        <TiktokLogo size={40} color="#fff" />
         {tiktok ? (
-          <strong className="text-[#9f86c0] text-base">Twitter</strong>
+          <strong className="text-white text-base font-unbounded">
+            Twitter
+          </strong>
         ) : (
           <></>
         )}
@@ -82,12 +109,14 @@ export default function Social() {
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => SetGithub(true)}
-        onMouseLeave={() => SetGithub(false)}
+        onMouseEnter={() => setGithub(true)}
+        onMouseLeave={() => setGithub(false)}
       >
-        <GithubLogo size={40} color="#9f86c0" />
+        <GithubLogo size={40} color="#fff" />
         {github ? (
-          <strong className="text-[#9f86c0] text-base">Github</strong>
+          <strong className="text-white text-base font-unbounded">
+            Github
+          </strong>
         ) : (
           <></>
         )}

@@ -45,7 +45,7 @@ function App() {
             <p className="text-white text-6xl text-center font-strech underline-title">
               feelipe Ceepluki
             </p>
-            <p className="text-white font-strech text-3xl mt-2">
+            <p className="text-white text-center font-strech text-3xl mt-2">
               developer front-end
             </p>
           </div>

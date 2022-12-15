@@ -7,12 +7,12 @@
 @font-face {
   font-family: "StretchPro";
   src: local("StretchPro"),
-    url(".src/assets/fonts/StretchPro.otf") format("truetype");
+    url("/src/assets/fonts/StretchPro.ttf") format("truetype");
   font-weight: normal;
 }
 
 .font-strech {
-  font-family: StretchPro;
+  font-family: StretchPro !important;
 }
 
 .border {

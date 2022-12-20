@@ -34,7 +34,7 @@ function App() {
       <div id="initial" className="h-screen w-full">
         <main className="flex h-screen w-full sm:flex-col lg:flex-row">
           <div className="sm:w-full lg:w-1/2 h-full flex flex-col items-center justify-center">
-            <div className="flex mt-20 items-center justify-center overflow-hidden sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] border-4 border-white bg-slate-500 rounded-full">
+            <div className="flex mt-20 items-center justify-center overflow-hidden sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] border-4 border-white bg-[#5e548e] rounded-full">
               <img src={Profile} className="sm:w-[300px] lg:w-[400px]" />
             </div>
             <div className="flex flex-row sm:w-[400px] lg:w-1/2 p-2 justify-between">
@@ -74,53 +74,6 @@ function App() {
             .{" "}
           </p>
         </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">
-            Professional Services
-          </p>
-        </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">Design Skills</p>
-        </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">
-            3 anos de Experiência como Developer
-          </p>
-        </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">
-            Experiência em tecnologias atuais
-          </p>
-        </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">
-            Habilidade em Escrita e fala
-          </p>
-        </div>
-        <div className="sm:w-full sm:pl-4 lg:w-1/4 pt-2 items-center justify-start flex flex-row">
-          <CheckCircle size={32} color="#9f86c0" />
-          <p className="ml-1 text-white font-unbounded">
-            Aplicações rápidas e responsivas para a web
-          </p>
-        </div>
-      </div>
-      <div
-        id="portfolio"
-        className="flex items-center justify-center bg-purpledark h-screen"
-      >
-        <a
-          target="_blank"
-          rel="noreferrer noopener"
-          href="https://lopesesantos.com"
-          className="flex flex-col rounded-lg p-2 items-center justify-center card"
-        >
-          <img src={LopeseSantos} className="" />
-        </a>
       </div>
       <div
         id="projects"

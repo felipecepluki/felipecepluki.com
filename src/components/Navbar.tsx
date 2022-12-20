@@ -27,17 +27,6 @@ export default function Navbar() {
       </Link>
       <Link
         activeClass="active"
-        to="portfolio"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        className="font-unbounded cursor-pointer text-lg text-white"
-      >
-        Portfólio
-      </Link>
-      <Link
-        activeClass="active"
         to="projects"
         spy={true}
         smooth={true}

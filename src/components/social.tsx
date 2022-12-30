@@ -98,7 +98,7 @@ export default function Social() {
         <TiktokLogo size={40} color="#fff" />
         {tiktok ? (
           <strong className="text-white text-base font-unbounded">
-            Twitter
+            Tiktok
           </strong>
         ) : (
           <></>

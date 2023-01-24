@@ -80,13 +80,15 @@ function App() {
         <table className="sm:pt-10 sm:pr-10 sm:pl-10 overflow-x-auto overflow-y-visible">
           <thead>
             <tr className="bg-purplemedium">
-              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                 Nome
               </th>
-              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                 Descrição
               </th>
-              <th className="text-white font-unbounded sm:text-xs">Link</th>
+              <th className="text-white font-unbounded sm:text-xs lg:text-base">
+                Link
+              </th>
             </tr>
           </thead>
           {isFetching && (
@@ -95,13 +97,13 @@ function App() {
           {data?.map((repo) => {
             return (
               <tr>
-                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                   {repo.full_name}
                 </th>
-                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                   {repo.description}
                 </th>
-                <th className="sm:text-xs">
+                <th className="sm:text-xs lg:text-base">
                   <a href={repo.html_url}>🔗</a>
                 </th>
               </tr>

@@ -1,7 +1,5 @@
 import Social from "./components/social";
 import Profile from "./assets/images/profile.png";
-import LopeseSantos from "./assets/images/lopesesantos.png";
-import { CheckCircle } from "phosphor-react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Navbar from "./components/Navbar";
@@ -27,14 +25,14 @@ function App() {
   );
 
   return (
-    <div className="h-full bg-purpledark">
+    <div className="h-full overflow-x-hidden bg-purpledark">
       <header className="fixed">
         <Navbar />
       </header>
       <div id="initial" className="h-screen w-full">
         <main className="flex h-screen w-full sm:flex-col lg:flex-row">
           <div className="sm:w-full lg:w-1/2 h-full flex flex-col items-center justify-center">
-            <div className="flex mt-20 items-center justify-center overflow-hidden sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] border-4 border-white bg-[#5e548e] rounded-full">
+            <div className="flex mt-28 items-center justify-center overflow-hidden sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] border-4 border-white bg-purplemedium rounded-full">
               <img src={Profile} className="sm:w-[300px] lg:w-[400px]" />
             </div>
             <div className="flex flex-row sm:w-[400px] lg:w-1/2 p-2 justify-between">
@@ -77,27 +75,39 @@ function App() {
       </div>
       <div
         id="projects"
-        className="flex justify-center flex-col h-screen bg-purpledark"
+        className="w-full h-screen items-center justify-center flex"
       >
-        {isFetching && (
-          <p className="font-bold text-lg text-white">Carregando...</p>
-        )}
-        {data?.map((repo) => {
-          return (
-            <a
-              target="_blank"
-              rel="noreferrer noopener"
-              href={repo.html_url}
-              key={repo.full_name}
-              className="p-2"
-            >
-              <strong className="text-white underline underline-offset-2 font-unbounded">
-                {repo.full_name}
-              </strong>
-              <p className="text-white font-sans">{repo.description}</p>
-            </a>
-          );
-        })}
+        <table className="sm:pt-10 sm:pr-10 sm:pl-10 overflow-x-auto overflow-y-visible">
+          <thead>
+            <tr className="bg-purplemedium">
+              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                Nome
+              </th>
+              <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                Descrição
+              </th>
+              <th className="text-white font-unbounded sm:text-xs">Link</th>
+            </tr>
+          </thead>
+          {isFetching && (
+            <p className="font-bold text-lg text-white">Carregando...</p>
+          )}
+          {data?.map((repo) => {
+            return (
+              <tr>
+                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                  {repo.full_name}
+                </th>
+                <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs">
+                  {repo.description}
+                </th>
+                <th className="sm:text-xs">
+                  <a href={repo.html_url}>🔗</a>
+                </th>
+              </tr>
+            );
+          })}
+        </table>
       </div>
     </div>
   );

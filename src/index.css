@@ -23,3 +23,14 @@
 .underline-title {
   text-decoration: underline wavy #5e548e;
 }
+
+tr {
+  border-top: 1px solid #c1c3d1;
+  border-bottom: 1px solid #c1c3d1;
+  border-left: 1px solid #c1c3d1;
+  border-right: 1px solid #c1c3d1;
+  color: #666b85;
+  font-size: 16px;
+  font-weight: normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}

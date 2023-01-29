@@ -44,7 +44,7 @@ function App() {
               feelipe Ceepluki
             </p>
             <p className="text-white text-center font-strech text-3xl mt-2">
-              developer front-end
+              話不多說，給我看看代碼
             </p>
           </div>
         </main>
@@ -58,18 +58,17 @@ function App() {
         </h1>
         <div className="sm:w-ful sm:p-4 lg:w-1/4">
           <p className="text-white text-justify font-unbounded text-base">
-            Sou o Felipe Cepluki. Tenho 17 anos, e sou{" "}
-            <strong className="underline underline-offset-2">
-              Developer Front-End
-            </strong>
-            , ou seja, cuido da parte visual de aplicações web, a parte que os
-            usuários veem. Antes de descobrir a tecnologia, queria ser artista,
-            no entanto, eu estou realizando esse sonho através da programação,
-            porque{" "}
-            <strong className="underline underline-offset-2">
-              programação é uma arte
-            </strong>
-            .{" "}
+            Sou o Felipe Cepluki. Tenho 17 anos, e sou 西伯塞古蘭薩大學
+            (Estudante de Cibersegurança). Além disso, sou: <br />
+            <a
+              href="https://agenciadesoftware.com.br"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              • 👨🏻‍💻 desenvolvedor web
+            </a>{" "}
+            <br /> • 🌱 vegetariano <br /> • 🎨 artista (afinal, programação é
+            uma arte)
           </p>
         </div>
       </div>

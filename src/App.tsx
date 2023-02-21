@@ -33,7 +33,10 @@ function App() {
         <main className="flex h-screen w-full sm:flex-col lg:flex-row">
           <div className="sm:w-full lg:w-1/2 h-full flex flex-col items-center justify-center">
             <div className="flex mt-28 items-center justify-center overflow-hidden sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] border-4 border-white bg-purplemedium rounded-full">
-              <img src={Profile} className="sm:w-[300px] lg:w-[400px]" />
+              <img
+                src="https://github.com/felipecepluki.png"
+                className="sm:w-full lg:w-full"
+              />
             </div>
             <div className="flex flex-row sm:w-[400px] lg:w-1/2 p-2 justify-between">
               <Social />
@@ -44,7 +47,7 @@ function App() {
               feelipe Ceepluki
             </p>
             <p className="text-white text-center font-strech text-3xl mt-2">
-              話不多說，給我看看代碼
+              Developer Front-End
             </p>
           </div>
         </main>
@@ -58,17 +61,9 @@ function App() {
         </h1>
         <div className="sm:w-ful sm:p-4 lg:w-1/4">
           <p className="text-white text-justify font-unbounded text-base">
-            Sou o Felipe Cepluki. Tenho 17 anos, e sou 西伯塞古蘭薩大學
-            (Estudante de Cibersegurança). Além disso, sou: <br />
-            <a
-              href="https://agenciadesoftware.com.br"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              • 👨🏻‍💻 desenvolvedor web
-            </a>{" "}
-            <br /> • 🌱 vegetariano <br /> • 🎨 artista (afinal, programação é
-            uma arte)
+            Sou o Felipe Cepluki. Tenho 17 anos, e sou Desenvolvedor Front-End.
+            Faço faculdade de Defesa Cibernética na FIAP. Sou entusiasta de
+            Design (UX e UI) e Cibersegurança.
           </p>
         </div>
       </div>

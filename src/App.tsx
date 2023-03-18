@@ -38,7 +38,7 @@ function App() {
                 className="sm:w-full lg:w-full"
               />
             </div>
-            <div className="flex flex-row sm:w-[400px] lg:w-1/2 p-2 justify-between">
+            <div className="flex flex-row sm:w-[400px] lg:w-[500px] p-4 justify-between">
               <Social />
             </div>
           </div>
@@ -59,17 +59,26 @@ function App() {
         <h1 className="text-white font-extrabold font-strech text-3xl">
           Sobree mim
         </h1>
-        <div className="sm:w-ful sm:p-4 lg:w-1/4">
+        <div className="sm:w-full sm:p-4 lg:w-2/3">
           <p className="text-white text-justify font-unbounded text-base">
             Sou o Felipe Cepluki. Tenho 17 anos, e sou Desenvolvedor Front-End.
-            Faço faculdade de Defesa Cibernética na FIAP. Sou entusiasta de
-            Design (UX e UI) e Cibersegurança.
+            Comecei a trabalhar com programação em 2020, com o início do meu
+            Técnico em Informática. Faço faculdade de Defesa Cibernética. Sou
+            entusiasta de Design e Cibersegurança.
           </p>
         </div>
       </div>
       <div
+        id="skills"
+        className="w-full h-screen items-center justify-center flex flex-col"
+      >
+        <h1 className="text-white font-extrabold font-strech text-3xl">
+          SSkills
+        </h1>
+      </div>
+      <div
         id="projects"
-        className="w-full h-screen items-center justify-center flex"
+        className="w-full h-screen items-center justify-center flex sm:px-2"
       >
         <table className="sm:pt-10 sm:pr-10 sm:pl-10 overflow-x-auto overflow-y-visible">
           <thead>
@@ -80,9 +89,6 @@ function App() {
               <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                 Descrição
               </th>
-              <th className="text-white font-unbounded sm:text-xs lg:text-base">
-                Link
-              </th>
             </tr>
           </thead>
           {isFetching && (
@@ -92,18 +98,50 @@ function App() {
             return (
               <tr>
                 <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
-                  {repo.full_name}
+                  <a href={repo.html_url}>{repo.full_name}</a>
                 </th>
                 <th className="text-white font-unbounded border-r-[1px] border-r-[#c1c3d1] sm:text-xs lg:text-base">
                   {repo.description}
-                </th>
-                <th className="sm:text-xs lg:text-base">
-                  <a href={repo.html_url}>🔗</a>
                 </th>
               </tr>
             );
           })}
         </table>
+      </div>
+      <div
+        id="contact"
+        className="w-full h-screen items-center justify-center flex flex-col"
+      >
+        <h1 className="text-white font-extrabold font-strech text-3xl">
+          CContato
+        </h1>
+        <form className="w-full flex flex-col items-center pt-2">
+          <input
+            type="text"
+            placeholder="Seu nome completo"
+            className="w-1/3 p-1 rounded-md bg-transparent outline-none text-white caret-purple font-unbounded placeholder:font-unbounded placeholder:text-gray-500"
+            minLength={10}
+            maxLength={50}
+          />
+          <input
+            type="email"
+            placeholder="Seu melhor e-mail"
+            className="w-1/3 mt-2 p-1 rounded-md bg-transparent outline-none text-white caret-purple font-unbounded placeholder:font-unbounded placeholder:text-gray-500"
+            maxLength={35}
+          />
+          <input
+            type="text"
+            placeholder="Assunto da mensagem"
+            className="w-1/3 mt-2 p-1 rounded-md bg-transparent outline-none text-white caret-purple font-unbounded placeholder:font-unbounded placeholder:text-gray-500"
+          />
+          <textarea
+            placeholder="Sua mensagem"
+            className="w-1/3 mt-2 p-1 rounded-md bg-transparent outline-none text-white caret-purple resize-none font-unbounded placeholder:font-unbounded placeholder:text-gray-500"
+          />
+          <button className="bg-purple rounded-md w-1/3 p-1 text-white font-unbounded">
+            Enviar
+          </button>
+        </form>
       </div>
     </div>
   );

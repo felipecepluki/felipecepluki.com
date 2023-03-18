@@ -3,39 +3,20 @@ import { useState } from "react";
 import {
   GithubLogo,
   InstagramLogo,
-  LinkedinLogo,
-  TiktokLogo,
   TwitterLogo,
-  Envelope,
+  LinkedinLogo,
+  MediumLogo,
 } from "phosphor-react";
 
 export default function Social() {
-  const [mail, setMail] = useState(false);
   const [linkedin, setLinkedin] = useState(false);
   const [instagram, setInstagram] = useState(false);
   const [twitter, setTwitter] = useState(false);
-  const [tiktok, setTiktok] = useState(false);
+  const [medium, setMedium] = useState(false);
   const [github, setGithub] = useState(false);
 
   return (
     <footer className="w-full flex flex-row items-center justify-between">
-      <a
-        href="mailto:cepluki.felipe@protonmail.com"
-        target="_blank"
-        rel="noreferrer noopener"
-        className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => setMail(true)}
-        onMouseLeave={() => setMail(false)}
-      >
-        <Envelope size={40} color="#fff" className="" />
-        {mail ? (
-          <strong className="text-white text-base font-unbounded">
-            E-mail
-          </strong>
-        ) : (
-          <></>
-        )}
-      </a>
       <a
         href="https://www.linkedin.com/in/felipe-cepluki-lopes-4b7a18243"
         target="_blank"
@@ -46,7 +27,7 @@ export default function Social() {
       >
         <LinkedinLogo size={40} color="#fff" className="" />
         {linkedin ? (
-          <strong className="text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-unbounded">
             Linkedin
           </strong>
         ) : (
@@ -63,7 +44,7 @@ export default function Social() {
       >
         <InstagramLogo size={40} color="#fff" />
         {instagram ? (
-          <strong className="text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-unbounded">
             Instagram
           </strong>
         ) : (
@@ -71,7 +52,7 @@ export default function Social() {
         )}
       </a>
       <a
-        href="https://www.twitter.com/felipecepluki"
+        href="https://www.instagram.com/felipecepluki"
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
@@ -80,7 +61,7 @@ export default function Social() {
       >
         <TwitterLogo size={40} color="#fff" />
         {twitter ? (
-          <strong className="text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-unbounded">
             Twitter
           </strong>
         ) : (
@@ -88,17 +69,17 @@ export default function Social() {
         )}
       </a>
       <a
-        href="https://www.tiktok.com/@felipecepluki"
+        href="https://medium.com/@felipecepluki"
         target="_blank"
         rel="noreferrer noopener"
         className="mr-4 flex flex-row items-center transition-all"
-        onMouseEnter={() => setTiktok(true)}
-        onMouseLeave={() => setTiktok(false)}
+        onMouseEnter={() => setMedium(true)}
+        onMouseLeave={() => setMedium(false)}
       >
-        <TiktokLogo size={40} color="#fff" />
-        {tiktok ? (
-          <strong className="text-white text-base font-unbounded">
-            Tiktok
+        <MediumLogo size={40} color="#fff" />
+        {medium ? (
+          <strong className="ml-2 text-white text-base font-unbounded">
+            Medium
           </strong>
         ) : (
           <></>
@@ -114,7 +95,7 @@ export default function Social() {
       >
         <GithubLogo size={40} color="#fff" />
         {github ? (
-          <strong className="text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-unbounded">
             Github
           </strong>
         ) : (

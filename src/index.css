@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -13,11 +13,6 @@
 
 .font-strech {
   font-family: StretchPro !important;
-}
-
-.border {
-  border: 2px;
-  border-color: gradient(#5e548e, #9f86c0);
 }
 
 .underline-title {

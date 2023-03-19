@@ -11,7 +11,7 @@ module.exports = {
         purpleclear: "#e0b1cb",
       },
       fontFamily: {
-        unbounded: "Unbounded, cursive",
+        roboto: "Roboto Mono, monospace",
       },
       screens: {
         sm: "375px",

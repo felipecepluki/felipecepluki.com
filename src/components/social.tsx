@@ -27,7 +27,7 @@ export default function Social() {
       >
         <LinkedinLogo size={40} color="#fff" className="" />
         {linkedin ? (
-          <strong className="ml-2 text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-roboto uppercase">
             Linkedin
           </strong>
         ) : (
@@ -44,7 +44,7 @@ export default function Social() {
       >
         <InstagramLogo size={40} color="#fff" />
         {instagram ? (
-          <strong className="ml-2 text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-roboto uppercase">
             Instagram
           </strong>
         ) : (
@@ -61,7 +61,7 @@ export default function Social() {
       >
         <TwitterLogo size={40} color="#fff" />
         {twitter ? (
-          <strong className="ml-2 text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-roboto uppercase">
             Twitter
           </strong>
         ) : (
@@ -78,7 +78,7 @@ export default function Social() {
       >
         <MediumLogo size={40} color="#fff" />
         {medium ? (
-          <strong className="ml-2 text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-roboto uppercase">
             Medium
           </strong>
         ) : (
@@ -95,7 +95,7 @@ export default function Social() {
       >
         <GithubLogo size={40} color="#fff" />
         {github ? (
-          <strong className="ml-2 text-white text-base font-unbounded">
+          <strong className="ml-2 text-white text-base font-roboto uppercase">
             Github
           </strong>
         ) : (

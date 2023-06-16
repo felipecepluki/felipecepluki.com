@@ -10,7 +10,7 @@ export function Footer() {
   const [github, setGithub] = useState(false);
 
   return (
-    <footer className="lg:w-1/2 sm:w-full flex flex-row items-center justify-between">
+    <footer className="lg:w-1/3 sm:w-full flex flex-row items-center justify-between">
       <a
         href="https://www.linkedin.com/in/felipe-cepluki/"
         target="_blank"
@@ -19,7 +19,7 @@ export function Footer() {
         onMouseEnter={() => setLinkedin(true)}
         onMouseLeave={() => setLinkedin(false)}
       >
-        <i className="ri-linkedin-fill ri-lg text-white"></i>
+        <i className="ri-linkedin-line ri-lg text-white"></i>
         {linkedin ? (
           <strong className="ml-2 text-white text-base font-roboto">
             linkedin

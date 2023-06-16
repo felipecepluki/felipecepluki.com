@@ -1,8 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { JetBrains_Mono } from 'next/font/google'
 import 'remixicon/fonts/remixicon.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = JetBrains_Mono({
+  weight: '400',
+  subsets: ['latin']
+ })
 
 export const metadata = {
   title: 'Felipe Cepluki',

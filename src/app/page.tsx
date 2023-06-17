@@ -1,10 +1,11 @@
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <div className="bg-purpledark h-screen w-full flex flex-col justify-between">
-      <nav className="w-full">
+      <nav className="w-full flex">
         <Navbar />
       </nav>
       <main className="w-full h-full flex items-center justify-center">

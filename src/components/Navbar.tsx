@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <div className="flex flex-row justify-between items-center">
-      <div>
+    <div className="flex w-full flex-row justify-between items-center">
+      <div className="flex w-1/4 justify-between">
         <Link href="/sobre" className="text-white uppercase">SOBRE</Link>
         <Link href="/projetos" className="text-white uppercase">PROJETOS</Link>
         <a 

@@ -1,11 +1,10 @@
+import { Navbar } from '@/components/Navbar'
 import './globals.css'
-import { JetBrains_Mono } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import 'remixicon/fonts/remixicon.css'
+import { Footer } from '@/components/Footer'
 
-const inter = JetBrains_Mono({
-  weight: '400',
-  subsets: ['latin']
- })
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Felipe Cepluki',
@@ -18,8 +17,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt" className={inter.className}>
+      <body className="bg-purpledark">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
+      <nav className="w-full flex">
+        <Navbar />
+      </nav>
+        <main>{children}</main>
+        <footer className="flex items-center justify-center pb-2">
+        <Footer />
+      </footer>
+      </body>
     </html>
   )
 }

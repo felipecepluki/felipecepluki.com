@@ -15,6 +15,7 @@ export default function About() {
   const [js, setJs] = useState(false);
   const [ts, setTs] = useState(false);
   const [elixir, setElixir] = useState(false);
+  const [node, setNode] = useState(false);
 
   const today = new Date();
   const birth = new Date("April 19, 2005 00:00:00");
@@ -54,6 +55,9 @@ export default function About() {
       </button>
       <button className="transition-all" onMouseEnter={() => setElixir(true)} onMouseLeave={() => setElixir(false)}>
         {elixir ? <i className="devicon-elixir-plain colored text-5xl"></i> : <i className="devicon-elixir-plain text-white text-5xl"></i>}
+      </button>
+      <button className="transition-all" onMouseEnter={() => setElixir(true)} onMouseLeave={() => setElixir(false)}>
+        {node ? <i className="devicon-nodejs-plain colored text-5xl"></i> : <i className="devicon-nodejs-plain text-white text-5xl"></i>}
       </button>
       </div>
       <div className="w-2/3 flex mt-5">

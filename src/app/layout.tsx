@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="bg-purpledark">
+      <body className="bg-purpledark overflow-x-hidden">
         <Script src="dist/clipboard.min.js" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
-        <nav className="w-full flex">
+        <nav className="w-full mt-2 flex">
           <Navbar />
         </nav>
           <main>{children}</main>

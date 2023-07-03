@@ -7,7 +7,7 @@ export default function Remember() {
   return (
     <main className="w-full h-screen flex flex-col items-center justify-center">
       <p className="italic text-white">
-        A persistência é muito importante. Você não deve desistir, a menos que seja forçado a desistir.
+        Persistence is very important. You must not give up unless you are forced to give up.
       </p>
       <p className="text-white font-bold"> - Elon Musk 🚀</p>
     </main>

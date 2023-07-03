@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <div className="flex w-3/4 flex-row justify-between items-center pl-5">
       <Link href="/">
-        <Image src={Logo} alt="Logo Image" className="w-[80px]" />
+        <Image src={Logo} alt="Logo Image" className="w-14" />
       </Link>
       <div className="flex w-2/3 justify-between">
         <Link href="/about" className="text-white uppercase transition-all hover:underline hover:underline-offset-2">ABOUT</Link>

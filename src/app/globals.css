@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9f86c0;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5e548e;
+}
+
 @font-face {
   font-family: "StretchPro";
   src: url("../assets/fonts/StretchPro.ttf") format("truetype");;

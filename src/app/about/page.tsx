@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import ClipboardJS from "clipboard";
 
-export default function Sobre() {
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+export default function About() {
   const [angular, setAngular] = useState(false);
   const [react, setReact] = useState(false);
   const [next, setNext] = useState(false);
@@ -17,6 +21,12 @@ export default function Sobre() {
   const age = today.getTime() - birth.getTime();
   const ageFinal = age / 31557600000;
   const ageFixed = ageFinal.toFixed(0);
+
+  new ClipboardJS('.btn')
+
+  const notify = () => toast.success("Bio Copied with Success!", {
+    theme: "dark"
+  });
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center">
@@ -47,11 +57,13 @@ export default function Sobre() {
       </button>
       </div>
       <div className="w-2/3 flex mt-5">
-        <p className="text-white">Meu nome é Felipe Cepluki Lopes, tenho {ageFixed} anos. Entrei pro mundo de tecnologia com 15 anos, quando fui fazer ensino médio integrado ao técnico em informática. Sou apaixonado por JavaScript e desenvolvimento web, com foco em front-end. Sou apaixonado por Linux (já testei mais de 20 distros diferentes na minha máquina, sem Virtualização).</p>
+        <p className="text-white" id="bio">My name is Felipe Cepluki Lopes, I'm {ageFixed} years old. I entered the world of technology at the age of 15, when I went to high school integrated with computer science. I'm passionate about JavaScript and web development, with a focus on front-end. I'm passionate about Linux (I've tested more than 20 different distros on my machine, without Virtualization).</p>
       </div>
-      <button className="text-white w-1/2">
-        <p>Copiar Bio</p>
+      <button className="text-white w-1/4 mt-3 p-2 flex items-center justify-center btn flex flex-row border-2 border-white rounded-lg hover:bg-purplemedium" data-clipboard-target="#bio" onClick={notify}>
+        <i className="ri-clipboard-line ri-xl text-white mr-1"></i>
+        <p>Copy Bio</p>
       </button>
+      <ToastContainer />
     </div>
   )
 }

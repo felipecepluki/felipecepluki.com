@@ -3,6 +3,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import 'remixicon/fonts/remixicon.css'
 import { Footer } from '@/components/Footer'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,16 +18,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt" className={inter.className}>
+    <html lang="en" className={inter.className}>
       <body className="bg-purpledark">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
-      <nav className="w-full flex">
-        <Navbar />
-      </nav>
-        <main>{children}</main>
-        <footer className="flex items-center justify-center pb-2">
-        <Footer />
-      </footer>
+        <Script src="dist/clipboard.min.js" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"></link>
+        <nav className="w-full flex">
+          <Navbar />
+        </nav>
+          <main>{children}</main>
+          <footer className="flex items-center justify-center pb-2">
+          <Footer />
+        </footer>
       </body>
     </html>
   )

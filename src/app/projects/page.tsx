@@ -3,7 +3,7 @@ export const metadata = {
   description: 'Bem-vindo ao meu site pessoal 👨‍💻',
 }
 
-export default function Projetos() {
+export default function Projects() {
   return (
     <div>
       <h1>Projetos</h1>

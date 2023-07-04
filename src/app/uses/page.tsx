@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function Uses() {
   return (
-    <div className="w-full h-full ml-20 mt-20 bg-purpledark">
+    <div className="w-full h-full ml-[700px] mt-20 bg-purpledark">
       <h2 className="font-stretchpro text-white">DDesktop</h2>
       <ul className="">
         <List link="https://pop.system76.com/" title="POP OS 22.04 LTS" description="The best distro linux" />

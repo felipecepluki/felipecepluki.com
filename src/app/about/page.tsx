@@ -56,7 +56,7 @@ export default function About() {
       <button className="transition-all" onMouseEnter={() => setElixir(true)} onMouseLeave={() => setElixir(false)}>
         {elixir ? <i className="devicon-elixir-plain colored text-5xl"></i> : <i className="devicon-elixir-plain text-white text-5xl"></i>}
       </button>
-      <button className="transition-all" onMouseEnter={() => setElixir(true)} onMouseLeave={() => setElixir(false)}>
+      <button className="transition-all" onMouseEnter={() => setNode(true)} onMouseLeave={() => setNode(false)}>
         {node ? <i className="devicon-nodejs-plain colored text-5xl"></i> : <i className="devicon-nodejs-plain text-white text-5xl"></i>}
       </button>
       </div>

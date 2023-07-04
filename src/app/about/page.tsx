@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ClipboardJS from "clipboard";
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -23,7 +23,9 @@ export default function About() {
   const ageFinal = age / 31557600000;
   const ageFixed = ageFinal.toFixed(0);
 
-  new ClipboardJS('.btn')
+  useEffect(() => {
+    new ClipboardJS('.btn')
+  }, [])
 
   const notify = () => toast.success("Bio Copied with Success!", {
     theme: "dark"

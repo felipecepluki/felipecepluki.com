@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  {
+    name: 'linguagens',
+    tools: [
+      { name: 'TypeScript', url: 'https://typescriptlang.org',                        desc: 'tipagem estática que previne bugs antes de chegar em produção' },
+      { name: 'JavaScript', url: 'https://developer.mozilla.org/docs/Web/JavaScript', desc: 'a linguagem da web, base de tudo que construo' },
+    ],
+  },
+  {
+    name: 'runtime & pacotes',
+    tools: [
+      { name: 'Bun',     url: 'https://bun.sh',     desc: 'runtime e toolkit all-in-one — substitui Node, npm e Jest com performance absurda' },
+      { name: 'Node.js', url: 'https://nodejs.org', desc: 'runtime JavaScript para o servidor' },
+      { name: 'pnpm',    url: 'https://pnpm.io',    desc: 'gerenciador de pacotes com armazenamento compartilhado e instalações muito mais rápidas' },
+    ],
+  },
+  {
+    name: 'web',
+    tools: [
+      { name: 'React',          url: 'https://react.dev',          desc: 'biblioteca de componentes para construir interfaces de usuário' },
+      { name: 'Next.js',        url: 'https://nextjs.org',         desc: 'framework React full-stack com SSR e roteamento de arquivos' },
+      { name: 'Astro',          url: 'https://astro.build',        desc: 'sites ultra-rápidos com zero JS por padrão — ideal para conteúdo estático' },
+      { name: 'TanStack Start', url: 'https://tanstack.com/start', desc: 'framework full-stack com roteamento e type-safety de ponta a ponta' },
+    ],
+  },
+  {
+    name: 'mobile',
+    tools: [
+      { name: 'React Native', url: 'https://reactnative.dev', desc: 'framework para apps móveis nativos usando React' },
+      { name: 'Expo',         url: 'https://expo.dev',        desc: 'plataforma para desenvolver, fazer build e publicar apps React Native' },
+    ],
+  },
+  {
+    name: 'estado & dados',
+    tools: [
+      { name: 'Convex',         url: 'https://convex.dev',         desc: 'banco de dados reativo com sync em tempo real e funções serverless' },
+      { name: 'Supabase',       url: 'https://supabase.com',       desc: 'alternativa open-source ao Firebase com PostgreSQL por baixo' },
+      { name: 'TanStack Query', url: 'https://tanstack.com/query', desc: 'cache e sincronização de estado assíncrono do servidor' },
+      { name: 'TanStack Form',  url: 'https://tanstack.com/form',  desc: 'formulários type-safe com validação e ótima performance' },
+      { name: 'TanStack AI',    url: 'https://tanstack.com/ai',    desc: 'primitivas para integrar streaming de IA diretamente nas interfaces' },
+    ],
+  },
+  {
+    name: 'estilo & design',
+    tools: [
+      { name: 'Tailwind CSS',  url: 'https://tailwindcss.com', desc: 'utilitários CSS direto no markup — o jeito mais rápido de estilizar' },
+      { name: 'Refero Design', url: 'https://refero.design',   desc: 'referências de design de produtos reais para inspiração e pesquisa' },
+    ],
+  },
+  {
+    name: 'componentes & animação',
+    tools: [
+      { name: 'shadcn',      url: 'https://ui.shadcn.com',                            desc: 'componentes acessíveis e customizáveis para copiar diretamente no seu projeto' },
+      { name: 'HeroUI',      url: 'https://heroui.com',                             desc: 'biblioteca de componentes React estilizados com Tailwind CSS' },
+      { name: 'Magic UI',    url: 'https://magicui.design',                         desc: 'componentes animados prontos para adicionar em projetos React' },
+      { name: 'Motion',      url: 'https://motion.dev',                             desc: 'biblioteca de animação para React — performática e com API declarativa' },
+      { name: 'agree-first', url: 'https://github.com/felipecepluki/agree-first',   desc: 'minha biblioteca headless para consentimento e aceite de termos em React' },
+    ],
+  },
+  {
+    name: 'infraestrutura & serviços',
+    tools: [
+      { name: 'Infisical',   url: 'https://infisical.com',    desc: 'gestão open-source de secrets e variáveis de ambiente' },
+      { name: 'PostHog',     url: 'https://posthog.com',      desc: 'analytics e monitoramento de produto open-source — eventos, funnels e mais' },
+      { name: 'AbacatePay',  url: 'https://abacatepay.com',   desc: 'processamento de pagamentos construído para o mercado brasileiro' },
+    ],
+  },
+  {
+    name: 'ferramentas',
+    tools: [
+      { name: 'Claude Code',    url: 'https://claude.ai/code',        desc: 'IA da Anthropic para desenvolvimento direto no terminal — uso o dia inteiro' },
+      { name: 'Zen Browser',    url: 'https://zen-browser.app',      desc: 'navegador baseado em Firefox com foco em privacidade e produtividade' },
+      { name: 'Google Chrome',  url: 'https://google.com/chrome',    desc: 'navegador principal para testes, DevTools e compatibilidade' },
+      { name: 'Proton Pass',    url: 'https://proton.me/pass',       desc: 'gerenciador de senhas com foco em privacidade, da Proton' },
+    ],
+  },
+];
+---
+
+<Layout lang="pt" title="Stack — Felipe Cepluki" description="Ferramentas e tecnologias que uso no dia a dia." back>
+  <div class="w-5/6 max-w-2xl mx-auto pb-12">
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3 fade-up">
+      <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">stack</span>
+    </h1>
+    <p class="text-muted leading-relaxed mb-12 fade-up">
+      ferramentas e serviços que uso para construir produtos e fazer as coisas funcionarem.
+    </p>
+
+    <div class="space-y-12">
+      {categories.map((cat, i) => (
+        <section class={`fade-up delay-${Math.min(i + 1, 7)}`}>
+          <h2 class="text-xs uppercase tracking-[0.18em] text-muted mb-5">{cat.name}</h2>
+
+          <div class="space-y-5">
+            {cat.tools.map((tool) => (
+              <div>
+                <a
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-base sm:text-lg font-semibold text-[#00c8ff] hover:text-[#00c8ff]/75 transition-colors"
+                >
+                  {tool.name}
+                </a>
+                <p class="flex items-start gap-2 text-sm text-muted mt-1 leading-relaxed">
+                  <span class="text-muted/35 shrink-0 mt-[1px]">↳</span>
+                  <span>{tool.desc}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Layout>

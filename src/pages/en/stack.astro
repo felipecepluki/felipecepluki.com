@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const categories = [
+  {
+    name: 'languages',
+    tools: [
+      { name: 'TypeScript', url: 'https://typescriptlang.org',                        desc: 'static typing that prevents bugs before they reach production' },
+      { name: 'JavaScript', url: 'https://developer.mozilla.org/docs/Web/JavaScript', desc: 'the language of the web, the foundation of everything I build' },
+    ],
+  },
+  {
+    name: 'runtime & packages',
+    tools: [
+      { name: 'Bun',     url: 'https://bun.sh',     desc: 'all-in-one runtime and toolkit — replaces Node, npm and Jest with insane performance' },
+      { name: 'Node.js', url: 'https://nodejs.org', desc: 'JavaScript runtime for the server' },
+      { name: 'pnpm',    url: 'https://pnpm.io',    desc: 'package manager with shared storage and significantly faster installs' },
+    ],
+  },
+  {
+    name: 'web',
+    tools: [
+      { name: 'React',          url: 'https://react.dev',          desc: 'component library for building user interfaces' },
+      { name: 'Next.js',        url: 'https://nextjs.org',         desc: 'full-stack React framework with SSR and file-based routing' },
+      { name: 'Astro',          url: 'https://astro.build',        desc: 'ultra-fast sites with zero JS by default — great for static content' },
+      { name: 'TanStack Start', url: 'https://tanstack.com/start', desc: 'full-stack framework with end-to-end type-safe routing' },
+    ],
+  },
+  {
+    name: 'mobile',
+    tools: [
+      { name: 'React Native', url: 'https://reactnative.dev', desc: 'framework for building native mobile apps with React' },
+      { name: 'Expo',         url: 'https://expo.dev',        desc: 'platform to develop, build and publish React Native apps' },
+    ],
+  },
+  {
+    name: 'state & data',
+    tools: [
+      { name: 'Convex',         url: 'https://convex.dev',         desc: 'reactive database with real-time sync and serverless functions' },
+      { name: 'Supabase',       url: 'https://supabase.com',       desc: 'open-source Firebase alternative built on top of PostgreSQL' },
+      { name: 'TanStack Query', url: 'https://tanstack.com/query', desc: 'async server state management and caching' },
+      { name: 'TanStack Form',  url: 'https://tanstack.com/form',  desc: 'type-safe forms with validation and great performance' },
+      { name: 'TanStack AI',    url: 'https://tanstack.com/ai',    desc: 'primitives for integrating AI streaming directly into UIs' },
+    ],
+  },
+  {
+    name: 'style & design',
+    tools: [
+      { name: 'Tailwind CSS',  url: 'https://tailwindcss.com', desc: 'utility-first CSS right in the markup — the fastest way to style' },
+      { name: 'Refero Design', url: 'https://refero.design',   desc: 'real product design references for inspiration and research' },
+    ],
+  },
+  {
+    name: 'components & animation',
+    tools: [
+      { name: 'shadcn',      url: 'https://ui.shadcn.com',                          desc: 'accessible and customizable components to copy directly into your project' },
+      { name: 'HeroUI',      url: 'https://heroui.com',                           desc: 'React component library styled with Tailwind CSS' },
+      { name: 'Magic UI',    url: 'https://magicui.design',                       desc: 'animated components ready to drop into React projects' },
+      { name: 'Motion',      url: 'https://motion.dev',                           desc: 'animation library for React — performant with a declarative API' },
+      { name: 'agree-first', url: 'https://github.com/felipecepluki/agree-first', desc: 'my headless consent and terms acceptance library for React' },
+    ],
+  },
+  {
+    name: 'infrastructure & services',
+    tools: [
+      { name: 'Infisical',  url: 'https://infisical.com',  desc: 'open-source secrets and environment variable management' },
+      { name: 'PostHog',    url: 'https://posthog.com',    desc: 'open-source product analytics — events, funnels, session replays and more' },
+      { name: 'AbacatePay', url: 'https://abacatepay.com', desc: 'payment processing built for the Brazilian market' },
+    ],
+  },
+  {
+    name: 'tools',
+    tools: [
+      { name: 'Claude Code',   url: 'https://claude.ai/code',     desc: "Anthropic's AI for development directly in the terminal — I use it all day" },
+      { name: 'Zen Browser',   url: 'https://zen-browser.app',   desc: 'Firefox-based browser focused on privacy and productivity' },
+      { name: 'Google Chrome', url: 'https://google.com/chrome', desc: 'primary browser for testing, DevTools and compatibility checks' },
+      { name: 'Proton Pass',   url: 'https://proton.me/pass',    desc: 'privacy-focused password manager from Proton' },
+    ],
+  },
+];
+---
+
+<Layout lang="en" title="Stack — Felipe Cepluki" description="Tools and technologies I use day to day." back>
+  <div class="w-5/6 max-w-2xl mx-auto pb-12">
+
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3 fade-up">
+      <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">stack</span>
+    </h1>
+    <p class="text-muted leading-relaxed mb-12 fade-up">
+      tools and services I use to build products and keep things running.
+    </p>
+
+    <div class="space-y-12">
+      {categories.map((cat, i) => (
+        <section class={`fade-up delay-${Math.min(i + 1, 7)}`}>
+          <h2 class="text-xs uppercase tracking-[0.18em] text-muted mb-5">{cat.name}</h2>
+
+          <div class="space-y-5">
+            {cat.tools.map((tool) => (
+              <div>
+                <a
+                  href={tool.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-base sm:text-lg font-semibold text-[#00c8ff] hover:text-[#00c8ff]/75 transition-colors"
+                >
+                  {tool.name}
+                </a>
+                <p class="flex items-start gap-2 text-sm text-muted mt-1 leading-relaxed">
+                  <span class="text-muted/35 shrink-0 mt-[1px]">↳</span>
+                  <span>{tool.desc}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Layout>

@@ -1,0 +1,73 @@
+---
+import '../styles/global.css';
+import { Font } from 'astro:assets';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang: 'pt' | 'en';
+  back?: boolean;
+  hideLangSwitcher?: boolean;
+}
+
+const { title = 'Felipe Cepluki', description = 'Software engineer. Founder. Builder.', lang, back = false, hideLangSwitcher = false } = Astro.props;
+
+const path = Astro.url.pathname;
+const isEn = path.startsWith('/en');
+const ptPath = isEn ? path.replace(/^\/en/, '') || '/' : path;
+const enPath = isEn ? path : '/en' + path;
+
+const homeHref = lang === 'en' ? '/en/' : '/';
+const backLabel = lang === 'en' ? '← back' : '← início';
+---
+
+<!doctype html>
+<html lang={lang} class="bg-background text-foreground">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="alternate" hreflang="pt" href={`https://felipecepluki.com${ptPath}`} />
+    <link rel="alternate" hreflang="en" href={`https://felipecepluki.com${enPath}`} />
+    <Font cssVariable="--font-bricolage" preload />
+    <Font cssVariable="--font-dm-sans" preload />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col font-sans">
+
+    <header class="px-5 sm:px-8 pt-5 pb-3">
+      <div class="w-5/6 max-w-5xl mx-auto flex items-center justify-between">
+        {back
+          ? <a href={homeHref} class="text-xs text-muted hover:text-foreground transition-colors">{backLabel}</a>
+          : <div />
+        }
+        {!hideLangSwitcher && (
+          <div class="flex items-center gap-3 ml-auto">
+            <a href={ptPath} class={`flex items-center gap-1 ${!isEn ? 'pointer-events-none' : 'group'}`}>
+              <span class={`text-sm font-display font-medium transition-colors ${!isEn ? 'text-[#00c8ff]' : 'text-muted/60 group-hover:text-muted'}`}>PT</span>
+              <span class={`text-xs transition-colors ${!isEn ? 'text-muted' : 'text-muted/40 group-hover:text-muted/60'}`}>· Brasil</span>
+            </a>
+            <span class="text-border/50 text-xs">·</span>
+            <a href={enPath} class={`flex items-center gap-1 ${isEn ? 'pointer-events-none' : 'group'}`}>
+              <span class={`text-sm font-display font-medium transition-colors ${isEn ? 'text-[#00c8ff]' : 'text-muted/60 group-hover:text-muted'}`}>EN</span>
+              <span class={`text-xs transition-colors ${isEn ? 'text-muted' : 'text-muted/40 group-hover:text-muted/60'}`}>· USA</span>
+            </a>
+          </div>
+        )}
+      </div>
+    </header>
+
+    <main class="flex-1 px-5 sm:px-8 py-6">
+      <slot />
+    </main>
+
+    <footer class="px-5 sm:px-8 py-6 text-center">
+      <p class="text-sm font-display font-medium text-muted/50">
+        © {new Date().getFullYear()} <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">Felipe Cepluki</span>
+      </p>
+    </footer>
+
+  </body>
+</html>

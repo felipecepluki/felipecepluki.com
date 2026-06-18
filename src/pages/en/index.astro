@@ -18,37 +18,35 @@ const pages = [
 ---
 
 <Layout lang="en" title="Felipe Cepluki" description="Software engineer. Founder. Builder of things." hideLangSwitcher>
-  <div class="w-5/6 max-w-5xl mx-auto py-8 sm:py-12">
+  <div class="max-w-5xl mx-auto py-6 sm:py-12">
 
     <!-- ─── hero ─────────────────────────────────────────────── -->
-    <section class="flex items-center justify-between gap-4 mb-12 fade-up">
-      <div class="flex items-center gap-4">
+    <section class="mb-10 fade-up">
+      <div class="flex items-center justify-between mb-4">
         <div class="relative shrink-0">
-          <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full p-[2px] bg-gradient-to-br from-[#00c8ff] to-[#8b5cf6]">
+          <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full p-[2px] bg-gradient-to-br from-[#00c8ff] to-[#8b5cf6]">
             <img src="https://github.com/felipecepluki.png" alt="Felipe Cepluki" class="w-full h-full rounded-full object-cover" />
           </div>
           <div class="absolute inset-0 rounded-full bg-gradient-to-br from-[#00c8ff]/20 to-[#8b5cf6]/20 blur-2xl scale-[1.8] -z-10" />
         </div>
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
-            <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">
-              Felipe Cepluki
-            </span>
-          </h1>
-          <p class="text-muted text-sm sm:text-base">software engineer · founder · builder</p>
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="/" class="group flex items-center gap-1">
+            <span class="text-sm font-display font-medium text-muted/60 group-hover:text-muted transition-colors">PT</span>
+            <span class="text-xs text-muted/40 group-hover:text-muted/60 transition-colors hidden sm:inline">· Brasil</span>
+          </a>
+          <span class="text-border/50 text-xs">·</span>
+          <span class="flex items-center gap-1">
+            <span class="text-sm font-display font-medium text-[#00c8ff]">EN</span>
+            <span class="text-xs text-muted hidden sm:inline">· USA</span>
+          </span>
         </div>
       </div>
-      <div class="flex items-center gap-3 shrink-0">
-        <a href="/" class="group flex items-center gap-1">
-          <span class="text-sm font-display font-medium text-muted/60 group-hover:text-muted transition-colors">PT</span>
-          <span class="text-xs text-muted/40 group-hover:text-muted/60 transition-colors">· Brasil</span>
-        </a>
-        <span class="text-border/50 text-xs">·</span>
-        <span class="flex items-center gap-1">
-          <span class="text-sm font-display font-medium text-[#00c8ff]">EN</span>
-          <span class="text-xs text-muted">· USA</span>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
+        <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">
+          Felipe Cepluki
         </span>
-      </div>
+      </h1>
+      <p class="text-muted text-sm sm:text-base">software engineer · founder · builder</p>
     </section>
 
     <!-- ─── nunca esqueci ─────────────────────────────────────── -->
@@ -60,7 +58,9 @@ const pages = [
       </div>
 
       <a
-        href="#"
+        href="https://nuncaesqueci.com"
+        target="_blank"
+        rel="noopener noreferrer"
         class="group relative block p-6 sm:p-8 rounded-2xl border border-[#00c8ff]/25 overflow-hidden hover:border-[#00c8ff]/50 hover:scale-[1.005] active:scale-[0.999] transition-all duration-300"
       >
         <div class="absolute inset-0 bg-gradient-to-br from-[#00c8ff]/8 via-transparent to-[#8b5cf6]/5" />
@@ -165,7 +165,7 @@ const pages = [
         href="https://github.com/felipecepluki/agree-first"
         target="_blank"
         rel="noopener noreferrer"
-        class="group relative flex items-center gap-4 p-5 rounded-2xl border border-border bg-surface/30 hover:bg-surface hover:border-[#22c55e]/40 hover:scale-[1.005] active:scale-[0.999] transition-all duration-200 overflow-hidden"
+        class="group relative flex items-start gap-4 p-5 rounded-2xl border border-border bg-surface/30 hover:bg-surface hover:border-[#22c55e]/40 hover:scale-[1.005] active:scale-[0.999] transition-all duration-200 overflow-hidden"
       >
         <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#22c55e]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
         <div class="w-11 h-11 rounded-xl flex items-center justify-center border border-[#22c55e]/30 bg-[#22c55e]/10 shrink-0">

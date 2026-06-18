@@ -1,0 +1,29 @@
+# Felipe Cepluki
+
+> Fundador da Equilibrio AI Labs, baseado em Curitiba, PR, Brasil. Cria apps e ferramentas que resolvem problemas reais das pessoas. É vegano e tem transtorno bipolar — duas partes importantes de quem é que moldaram sua forma de ver o mundo e construir para as pessoas.
+
+## Pages
+
+- [Home](https://felipecepluki.com/): Página principal com projeto em destaque (Nunca Esqueci), canal do YouTube, redes sociais e projeto open source
+- [Sobre](https://felipecepluki.com/about/): Quem é Felipe Cepluki — fundador, localização, valores e contato
+- [Stack](https://felipecepluki.com/stack/): Ferramentas, linguagens e serviços que usa no dia a dia para construir produtos
+
+## Projects
+
+- [Nunca Esqueci](https://nuncaesqueci.com): App mobile em desenvolvimento ativo — em breve
+- [agree-first](https://github.com/felipecepluki/agree-first): Biblioteca React headless para fluxos de consentimento e aceite de termos — scroll enforcement, audit trails e suporte a múltiplos documentos
+- [Equilibrio AI Labs](https://www.equilibrioailabs.com/): Empresa fundada por Felipe Cepluki
+
+## Social
+
+- [GitHub](https://github.com/felipecepluki): Código, projetos e experimentos
+- [YouTube](https://youtube.com/@felipecepluki): Tech, projetos e processo criativo
+- [LinkedIn](https://linkedin.com/in/felipecepluki): Carreira e networking
+- [X / Twitter](https://x.com/felipecepluki): Pensamentos sobre tech e startups
+- [Instagram](https://instagram.com/felipecepluki): Bastidores e dia a dia
+
+## Optional
+
+- [English version](https://felipecepluki.com/en/): Site disponível também em inglês
+- [Stack em inglês](https://felipecepluki.com/en/stack/): Stack page in English
+- [Sobre em inglês](https://felipecepluki.com/en/about/): About page in English

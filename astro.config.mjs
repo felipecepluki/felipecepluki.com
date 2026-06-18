@@ -2,10 +2,15 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
+  site: 'https://felipecepluki.com',
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   i18n: {
     defaultLocale: 'pt',
     locales: ['pt', 'en'],
@@ -13,6 +18,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   fonts: [
     {
       provider: fontProviders.fontsource(),
@@ -27,4 +33,6 @@ export default defineConfig({
       weights: ['300 700'],
     },
   ],
+
+  integrations: [sitemap()],
 });

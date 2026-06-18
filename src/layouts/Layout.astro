@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -10,15 +11,51 @@ interface Props {
   hideLangSwitcher?: boolean;
 }
 
-const { title = 'Felipe Cepluki', description = 'Software engineer. Founder. Builder.', lang, back = false, hideLangSwitcher = false } = Astro.props;
+const {
+  title = 'Felipe Cepluki',
+  description = 'Fundador da Equilibrio AI Labs. Cria apps e ferramentas que resolvem problemas reais. Baseado em Curitiba, Brasil.',
+  lang,
+  back = false,
+  hideLangSwitcher = false,
+} = Astro.props;
 
+const siteUrl = 'https://felipecepluki.com';
 const path = Astro.url.pathname;
 const isEn = path.startsWith('/en');
 const ptPath = isEn ? path.replace(/^\/en/, '') || '/' : path;
 const enPath = isEn ? path : '/en' + path;
+const canonicalUrl = `${siteUrl}${path}`;
+const ogImage = `${siteUrl}/og.png`;
 
 const homeHref = lang === 'en' ? '/en/' : '/';
 const backLabel = lang === 'en' ? '← back' : '← início';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Felipe Cepluki',
+  url: siteUrl,
+  image: 'https://github.com/felipecepluki.png',
+  jobTitle: 'Founder',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Equilibrio AI Labs',
+    url: 'https://www.equilibrioailabs.com',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Curitiba',
+    addressRegion: 'PR',
+    addressCountry: 'BR',
+  },
+  sameAs: [
+    'https://github.com/felipecepluki',
+    'https://linkedin.com/in/felipecepluki',
+    'https://x.com/felipecepluki',
+    'https://youtube.com/@felipecepluki',
+    'https://instagram.com/felipecepluki',
+  ],
+};
 ---
 
 <!doctype html>
@@ -26,19 +63,51 @@ const backLabel = lang === 'en' ? '← back' : '← início';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- primary -->
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- open graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'pt' ? 'pt_BR' : 'en_US'} />
+    <meta property="og:site_name" content="Felipe Cepluki" />
+
+    <!-- twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@felipecepluki" />
+    <meta name="twitter:creator" content="@felipecepluki" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- i18n -->
+    <link rel="alternate" hreflang="pt" href={`${siteUrl}${ptPath}`} />
+    <link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${ptPath}`} />
+
+    <!-- icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
-    <link rel="alternate" hreflang="pt" href={`https://felipecepluki.com${ptPath}`} />
-    <link rel="alternate" hreflang="en" href={`https://felipecepluki.com${enPath}`} />
+
+    <!-- fonts -->
     <Font cssVariable="--font-bricolage" preload />
     <Font cssVariable="--font-dm-sans" preload />
-    <title>{title}</title>
+
+    <!-- structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <ClientRouter />
   </head>
   <body class="min-h-screen flex flex-col font-sans">
 
     <header class="px-5 sm:px-8 pt-5 pb-3">
-      <div class="w-5/6 max-w-5xl mx-auto flex items-center justify-between">
+      <div class="max-w-5xl mx-auto flex items-center justify-between">
         {back
           ? <a href={homeHref} class="text-xs text-muted hover:text-foreground transition-colors">{backLabel}</a>
           : <div />
@@ -59,15 +128,28 @@ const backLabel = lang === 'en' ? '← back' : '← início';
       </div>
     </header>
 
-    <main class="flex-1 px-5 sm:px-8 py-6">
+    <main transition:animate="fade" class="flex-1 px-5 sm:px-8 py-6">
       <slot />
     </main>
 
-    <footer class="px-5 sm:px-8 py-6 text-center">
-      <p class="text-sm font-display font-medium text-muted/50">
-        © {new Date().getFullYear()} <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">Felipe Cepluki</span>
-      </p>
+    <footer class="px-5 sm:px-8 py-6">
+      <div class="max-w-5xl mx-auto flex items-center justify-between gap-4">
+        <p class="text-sm font-display font-medium text-muted/50">
+          © {new Date().getFullYear()} <span class="bg-gradient-to-r from-[#00c8ff] to-[#8b5cf6] bg-clip-text text-transparent">Felipe Cepluki</span>
+        </p>
+        <div class="flex items-center gap-3 text-sm text-muted/30">
+          <a href="/llms.txt" class="hover:text-muted/60 transition-colors">llms.txt</a>
+          <span>·</span>
+          <a href="/robots.txt" class="hover:text-muted/60 transition-colors">robots.txt</a>
+          <span>·</span>
+          <a href="/sitemap-index.xml" class="hover:text-muted/60 transition-colors">sitemap</a>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      document.addEventListener('astro:after-swap', () => window.scrollTo({ top: 0, behavior: 'instant' }));
+    </script>
 
   </body>
 </html>
